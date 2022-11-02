@@ -6,7 +6,7 @@ RUN apt update && apt install -y --no-install-recommends \
     python3-pip \
     python3-colcon-common-extensions \
     build-essential \
-    git libpcl-dev ros-foxy-pcl-conversions \
+    git libpcl-dev ros-${ROS_DISTRO}-pcl-conversions \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /colcon_ws/src
