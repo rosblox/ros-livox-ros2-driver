@@ -13,7 +13,7 @@ WORKDIR /colcon_ws/src
 COPY livox_ros2_driver livox_ros2_driver 
 
 WORKDIR /colcon_ws
-RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build
+RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --event-handlers console_direct+
 
 WORKDIR /
 
