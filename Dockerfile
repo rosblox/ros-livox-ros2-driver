@@ -18,3 +18,6 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh && colcon build --symlink-install --cmake-
 WORKDIR /
 
 COPY ros_entrypoint.sh .
+
+RUN echo 'alias build="colcon build --cmake-args --symlink-install  --event-handlers console_direct+"' >> ~/.bashrc
+RUN echo 'alias run="ros2 launch livox_ros2_driver livox_lidar_launch.py"' >> ~/.bashrc
