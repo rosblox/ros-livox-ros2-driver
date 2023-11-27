@@ -1,1 +1,7 @@
-docker build --progress string  -t ghcr.io/rosblox/ros-livox-ros2-driver:foxy --build-arg ROS_DISTRO=foxy .
+#!/bin/bash
+
+ROS_DISTRO=humble
+
+REPOSITORY_NAME="$(basename "$(dirname -- "$( readlink -f -- "$0"; )")")"
+
+docker build --progress=plain --build-arg ROS_DISTRO=${ROS_DISTRO} -t ghcr.io/rosblox/${REPOSITORY_NAME}:${ROS_DISTRO} .
